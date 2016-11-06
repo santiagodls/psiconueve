@@ -3,9 +3,14 @@ html, body {
 	background: $grey0;
 }
 
-.logo {
-	background: url("../images/logo.svg");
-	background-size: 100% 300%;
+body {
+	font-family: $osans;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
 }
 
 header {
@@ -25,4 +30,46 @@ header {
 		width: 1.5em;
 		height: 1.5em;
 	}
+}
+
+footer {
+	text-align: center;
+	font-size: .95em;
+	position: relative;
+	.go-top {
+		position: absolute;
+		top: -1.5em;
+		left: 50%;
+		transform: translateX(-50%);
+		background: url("../images/go-top.svg") no-repeat center;
+		width: 2em;
+		height: 2em;
+	}
+	.logo {
+		@include logo-dimensions(8em);
+		background-position: 0 100%;
+		display: block;
+		margin: 0 auto .25em;
+	}
+	address {
+		background: $black1;
+		color: $white;
+		padding: 1em;
+		line-height: 1.25em;
+		h4 {
+			font-weight: 600;
+			color: $green0;
+		}
+	}
+	.copyright {
+		font-size: .85em;
+		color: $quote1;
+		padding: 2em;
+		background: $white;
+	}
+}
+
+.logo {
+	background: url("../images/logo.svg");
+	background-size: 100% 300%;
 }
