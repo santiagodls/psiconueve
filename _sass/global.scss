@@ -1,3 +1,28 @@
-body {
-	background: $blue;
+html, body {
+	height: 100%;
+	background: $grey0;
+}
+
+.logo {
+	background: url("../images/logo.svg");
+	background-size: 100% 300%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: .75em 2em;
+	background: $white;
+	* {
+		cursor: pointer;
+	}
+	.logo {
+		@include logo-dimensions(8em);
+	}
+	.menu-launcher {
+		background: url("../images/menu-launcher.svg") no-repeat center;
+		width: 1.5em;
+		height: 1.5em;
+	}
 }
