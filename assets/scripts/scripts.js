@@ -1,6 +1,5 @@
 $(function(){
 	$(".menu-launcher").click(function(){
-		$(".menu-launcher, header").toggleClass("active");
-		$(".menu-fs").toggle();
+		$(".menu-launcher, .menu-fs, header").toggleClass("active");
 	})
 });
