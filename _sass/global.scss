@@ -16,14 +16,15 @@ main {
 header {
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
-	padding: .75em 2em;
+	align-items: center;
+	padding: .5em 2em;
 	background: $white;
 	* {
 		cursor: pointer;
 	}
 	.logo {
-		@include logo-dimensions(8em);
+		@include logo-dimensions(7em);
+		transform: translateY(.05em);
 	}
 	.menu-launcher {
 		background: url("../images/menu-launcher.svg") no-repeat center;
@@ -34,7 +35,7 @@ header {
 
 footer {
 	text-align: center;
-	font-size: .95em;
+	font-size: .9em;
 	position: relative;
 	.go-top {
 		position: absolute;
@@ -42,14 +43,14 @@ footer {
 		left: 50%;
 		transform: translateX(-50%);
 		background: url("../images/go-top.svg") no-repeat center;
-		width: 2em;
-		height: 2em;
+		width: 2.25em;
+		height: 2.25em;
 	}
 	.logo {
-		@include logo-dimensions(8em);
+		@include logo-dimensions(7.5em);
 		background-position: 0 100%;
 		display: block;
-		margin: 0 auto .25em;
+		margin: auto;
 	}
 	address {
 		background: $black1;
@@ -61,15 +62,31 @@ footer {
 			color: $green0;
 		}
 	}
-	.copyright {
-		font-size: .85em;
-		color: $quote1;
-		padding: 2em;
+	.newsletter {
 		background: $white;
+		padding: .5em 1em 1em;
+		input {
+			padding: .25em .5em;
+			-webkit-appearance: none;
+			&[type="email"] {
+				background: $grey1;
+			}
+			&[type="submit"] {
+				background: $green0;
+				color: $white;
+				cursor: pointer;
+				&::-moz-focus-inner {
+					border: 0;
+				}
+				&:hover {
+					background: $green1;
+				}
+			}
+		}
 	}
 }
 
 .logo {
-	background: url("../images/logo.svg");
-	background-size: 100% 300%;
+	background: url("../images/logo-original.svg");
+	background-size: 100% 200%;
 }
