@@ -1,0 +1,52 @@
+footer {
+	text-align: center;
+	font-size: .9em;
+	position: relative;
+	.go-top {
+		position: absolute;
+		top: -1.5em;
+		left: 50%;
+		transform: translateX(-50%);
+		background: url("../images/go-top.svg") no-repeat center;
+		width: 2.25em;
+		height: 2.25em;
+	}
+	.logo {
+		@include logo-dimensions(7.5em);
+		background-position: 0 100%;
+		display: block;
+		margin: auto;
+	}
+	address {
+		background: $black1;
+		color: $white;
+		padding: 1em;
+		line-height: 1.25em;
+		h4 {
+			font-weight: 600;
+			color: $green0;
+		}
+	}
+	.newsletter {
+		background: $white;
+		padding: .5em 1em 1em;
+		input {
+			padding: .25em .5em;
+			-webkit-appearance: none;
+			&[type="email"] {
+				background: $grey1;
+			}
+			&[type="submit"] {
+				background: $green0;
+				color: $white;
+				cursor: pointer;
+				&::-moz-focus-inner {
+					border: 0;
+				}
+				&:hover {
+					background: $green1;
+				}
+			}
+		}
+	}
+}

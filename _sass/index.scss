@@ -1,8 +1,18 @@
 #cover {
 	height: calc(100vh - 3em);//3em header height
+	max-height: 40em;
 	background: url("../images/01.jpg") no-repeat;
 	background-size: 130%;
 	background-attachment: fixed;
+	.title {
+		font-size: 4em;
+		span b {
+			color: $green1;
+			&:not(.default) {
+				display: none;
+			}
+		}
+	}
 }
 #abstract {
 }

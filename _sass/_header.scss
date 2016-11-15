@@ -1,0 +1,76 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5em 2em;
+	background: $white;
+	* {
+		cursor: pointer;
+		z-index: 1001;
+	}
+	.logo {
+		@include logo-dimensions(7em);
+		transform: translateY(.05em);
+		transition: background-position 0s 0.5s;
+	}
+	.menu-launcher {
+		width: 2.25em;
+		height: 2em;
+		appearance: none;
+		box-shadow: none;
+		border-radius: none;
+		border: none;
+		background: transparent;
+		&:focus {
+			outline: none;
+		}
+		.menu-bar {
+			$bar-height: .25em;
+			display: block;
+			width: 100%;
+			height: $bar-height;
+			background: $black1;
+			position: relative;
+			transition: background 0s 0.3s;
+			&:before, &:after {
+				content: "";
+				@extend .menu-bar;
+				position: absolute;
+				transition-duration: 0.3s, 0.3s, 0.3s;
+				transition-delay: 0s, 0.3s, 0s;
+			}
+			&:before {
+				top: -$bar-height*2;
+				transition-property: background, top, transform;
+			}
+			&:after {
+				bottom: -$bar-height*2;
+				transition-property: background, bottom, transform;
+			}
+		}
+		&.active {
+			.menu-bar {
+				background: transparent;
+				&:before, &:after {
+					background: $white;
+					transition-delay: 0s, 0s, 0.3s;
+				}
+				&:before {
+					top: 0;
+					transform: rotate(45deg);
+				}
+				&:after {
+					bottom: 0;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	&.active {
+		background: transparent;
+		.logo {
+			background-position: 0 100%;
+			transition-delay: 0s;
+		}
+	}
+}
