@@ -6,10 +6,20 @@
 	background-attachment: fixed;
 	.title {
 		font-size: 4em;
-		span b {
-			color: $green1;
-			&:not(.default) {
-				display: none;
+		overflow: hidden;
+		span {
+			position:relative;
+			b {
+				color: $green1;
+				position: absolute;
+				transition: opacity linear .15s, transform linear .3s .15s;
+				opacity: 0;
+				transform: rotateX(90deg);
+				&.visible {
+					opacity: 1;
+					transform: rotateX(0deg);
+					transition-delay: 0;
+				}
 			}
 		}
 	}
