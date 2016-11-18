@@ -2,14 +2,16 @@
 html, body {
 	height: 100%;
 	background: $grey0;
+	font-family: $osans;
+}
+html {
+	overflow: hidden;
 }
 body {
-	font-family: $osans;
-	display: flex;
-	flex-direction: column;
+	overflow-y: scroll
 }
 main {
-	flex: 1;
+	// height: 100%;
 }
 @import "header";
 @import "footer";

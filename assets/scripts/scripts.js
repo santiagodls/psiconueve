@@ -21,8 +21,12 @@ function textRotator() {
 }
 textRotator();
 
-//PARALLAX
-$(window).scroll(function(){
-	var scrollPos = $(this).scrollTop();
-	$("#cover").css("background-position", "0px " + -scrollPos/4 +"px")
-});
+// PARALLAX
+$(function(){
+	$("body").scroll(function(){
+		var scrollPos = $("main").offset().top,
+				headerH = $("header").innerHeight(),
+				newPos = Math.abs(scrollPos-headerH);
+		$("#cover").css("background-position", "0px " + -newPos/2 +"px")
+	});
+})
