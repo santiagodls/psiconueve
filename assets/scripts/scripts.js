@@ -30,3 +30,13 @@ $(function(){
 		$("#cover").css("background-position", "0px " + -newPos/2 +"px")
 	});
 })
+
+//LIVERELOAD KEEP SCROLL
+$(function(){
+	$("body").scroll(function(){
+		var scroll = "?"+$("body").scrollTop();
+		window.history.pushState("", "" , scroll);
+	})
+	var match = window.location.href.split("?")[1];
+	$('html, body').scrollTop( match );
+});

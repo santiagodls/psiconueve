@@ -2,7 +2,7 @@
 	height: calc(100vh - 3em);
 	max-height: 50em;
 	background: url("../images/01.jpg") no-repeat;
-	background-size: 130%;
+	background-size: cover;
 	background-attachment: fixed;
 	z-index: 1;
 	display: flex;
@@ -32,5 +32,26 @@
 		font-size: 3em;
 	}
 }
-#abstract {
+#abstract ul {
+	display: flex;
+	justify-content: space-between;
+	max-width: 50em;
+	margin: auto;
+	text-align: center;
+	li {
+		width: 13em;
+		margin: 2em 1em;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 6em;
+			display: block;
+			margin-bottom: 1em;
+		}
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}):before {
+				background: url("../images/abs0"+$i+".svg") no-repeat center;
+			}
+		}
+	}
 }
