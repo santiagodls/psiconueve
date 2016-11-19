@@ -23,13 +23,33 @@ textRotator();
 
 // PARALLAX
 $(function(){
+	var element = $(".parallax");
 	$("body").scroll(function(){
-		var scrollPos = $("main").offset().top,
-				headerH = $("header").innerHeight(),
-				newPos = Math.abs(scrollPos-headerH);
-		$("#cover").css("background-position", "0px " + -newPos/2 +"px")
+		if(element.length > 0){
+			calculatePosition(element);
+		}
 	});
-})
+	if(element.length > 0){
+		calculatePosition(element);
+	}
+});
+function calculatePosition(element) {
+	element.each(function(i,e){
+		var wHeight = window.innerHeight,
+				offset = $(e).offset().top,
+				scrollPos = $("body").scrollTop(),
+				height = $(e).outerHeight(),
+				bottom = (height+offset) - wHeight;
+		//if is visible
+		if (offset <= wHeight && offset >= -height) {
+			bkgPosition($(e), bottom);
+		}
+	});
+}
+function bkgPosition(el, pos) {
+	var x = el.data("x");
+	el.css("background-position", x+" " + pos/2 +"px");
+}
 
 //LIVERELOAD KEEP SCROLL
 $(function(){

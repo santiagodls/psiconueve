@@ -98,6 +98,7 @@
 			width: 100%;
 			background: url("../images/03.jpg") no-repeat center;
 			background-size: cover;
+			background-attachment: fixed;
 			position: relative;
 			&:before {
 				@include transparent-layer($black3, .4);
