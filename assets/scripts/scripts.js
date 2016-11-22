@@ -37,12 +37,12 @@ $(function(){
 //LIVERELOAD KEEP SCROLL
 var timer;
 $(function(){
-	$("body").scroll(function(){
+	$(window).scroll(function(){
 		if(timer) {
 			window.clearTimeout(timer);
 		}
 		timer = window.setTimeout(function(){
-			var scroll = "?"+$("body").scrollTop();
+			var scroll = "?"+$(window).scrollTop();
 			window.history.pushState("", "" , scroll);
 		}, 100);
 	});
