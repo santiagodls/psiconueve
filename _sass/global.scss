@@ -4,15 +4,7 @@ html, body {
 	background: $grey0;
 	font-family: $osans;
 }
-html {
-	overflow: hidden;
-}
-body {
-	overflow-y: scroll
-}
-main {
-	// height: 100%;
-}
+
 @import "header";
 @import "footer";
 @import "menu-fs";
@@ -62,4 +54,11 @@ p {
 	&:after {
 		margin-left: .25em;
 	}
+}
+.jarallax {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+		z-index: 1;
 }

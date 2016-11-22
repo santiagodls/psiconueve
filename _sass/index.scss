@@ -1,14 +1,12 @@
 #cover {
 	height: calc(100vh - 3em);
 	max-height: 50em;
-	background: url("../images/01.jpg") no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 2em;
+	background-image: url('../images/01.jpg');
 	.title {
 		font-size: 5em;
 		line-height: 1em;
@@ -96,10 +94,8 @@
 		&:nth-child(3) {
 			padding: 12em 0;
 			width: 100%;
-			background: url("../images/03.jpg") no-repeat center;
-			background-size: cover;
-			background-attachment: fixed;
 			position: relative;
+			background-image: url('../images/03.jpg');
 			&:before {
 				@include transparent-layer($black3, .4);
 			}

@@ -23,40 +23,29 @@ textRotator();
 
 // PARALLAX
 $(function(){
-	var element = $(".parallax");
-	$("body").scroll(function(){
-		if(element.length > 0){
-			calculatePosition(element);
-		}
+	$('.jarallax').jarallax({
+		speed: 0.5,
+		noAndroid: true
 	});
-	if(element.length > 0){
-		calculatePosition(element);
+	var isIE = /*@cc_on!@*/false || !!document.documentMode;
+	var isEdge = !isIE && !!window.StyleMedia;
+	if (isIE || isEdge) {
+		$(".jarallax").addClass("ms").jarallax("destroy");
 	}
 });
-function calculatePosition(element) {
-	element.each(function(i,e){
-		var wHeight = window.innerHeight,
-				offset = $(e).offset().top,
-				scrollPos = $("body").scrollTop(),
-				height = $(e).outerHeight(),
-				bottom = (height+offset) - wHeight;
-		//if is visible
-		if (offset <= wHeight && offset >= -height) {
-			bkgPosition($(e), bottom);
-		}
-	});
-}
-function bkgPosition(el, pos) {
-	var x = el.data("x");
-	el.css("background-position", x+" " + pos/2 +"px");
-}
 
 //LIVERELOAD KEEP SCROLL
+var timer;
 $(function(){
 	$("body").scroll(function(){
-		var scroll = "?"+$("body").scrollTop();
-		window.history.pushState("", "" , scroll);
-	})
+		if(timer) {
+			window.clearTimeout(timer);
+		}
+		timer = window.setTimeout(function(){
+			var scroll = "?"+$("body").scrollTop();
+			window.history.pushState("", "" , scroll);
+		}, 100);
+	});
 	var match = window.location.href.split("?")[1];
 	$('html, body').scrollTop( match );
 });
