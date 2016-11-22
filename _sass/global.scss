@@ -4,7 +4,10 @@ html, body {
 	background: $grey0;
 	font-family: $osans;
 }
-
+body.no-scroll{
+	position: fixed;
+	overflow-y: scroll;
+}
 @import "header";
 @import "footer";
 @import "menu-fs";

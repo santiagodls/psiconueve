@@ -1,11 +1,21 @@
-//LAUNCHERS
+//ACTIONS
 $(function(){
 	$(".menu-launcher").click(function(){
 		$(".menu-launcher, .menu-fs, header").toggleClass("active");
+		$("body").toggleClass("no-scroll");
+	});
+	var goPos = parseInt($(".go-top").css("top"));
+	$(".go-top").click(function(){
+		$("html, body").animate({scrollTop: 0}, 750, "easeInOutExpo");
 	})
+	// .hover(function(){
+	// 	$(this).stop().animate({top: goPos-5}, 500, "easeOutElastic", function(){
+	// 		$(this).stop().animate({top: goPos}, 500, "easeOutElastic");
+	// 	}), function(){$(this).preventDefault();}
+	// });
 });
 
-//ANIMATION
+//ANIMATIONS
 function textRotator() {
 	var current = $("#dinamic-end b.visible"),
 			first = $("#dinamic-end b").first(),
