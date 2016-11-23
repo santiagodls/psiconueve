@@ -1,4 +1,4 @@
-#cover {
+#index-cover {
 	height: calc(100vh - 3em);
 	max-height: 50em;
 	z-index: 1;
@@ -77,7 +77,7 @@
 				min-width: 18em;
 				max-width: 40em;
 				opacity: .6;
-				background: url("../images/02.jpg") no-repeat center;
+				background: url("../images/09.jpg") no-repeat center;
 				background-size: cover;
 				margin-left: 0
 			}
@@ -95,7 +95,7 @@
 			padding: 12em 0;
 			width: 100%;
 			position: relative;
-			background-image: url('../images/03.jpg');
+			background-image: url('../images/10.jpg');
 			&:before {
 				@include transparent-layer($black3, .4);
 			}

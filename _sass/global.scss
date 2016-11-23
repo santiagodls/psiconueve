@@ -59,10 +59,39 @@ p {
 		margin-left: .25em;
 	}
 }
+
+//PARALLAX ELEMENTS
 .jarallax {
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	z-index: 1;
+}
+.cover {
+	padding: 14em 0 5em;
+	.text-wrapper {
+		text-align: center;
+		position: relative;
+		padding: 1em .5em;
 		z-index: 1;
+		.title {
+			color: $white;
+		}
+		.subtitle {
+			color: $white;
+			font-family: $osans;
+			font-size: 1.5em;
+			transform: translateY(-50%);
+		}
+		&:before {
+			@include transparent-layer($black2, .6);
+			z-index: -1;
+		}
+	}
+	@for $i from 2 through 8 {
+		&.nav0#{$i} {
+			background-image: url("../images/0#{$i}.jpg");
+		}
+	}
 }
