@@ -64,6 +64,12 @@
 		text-align: center;
 		&:nth-child(1) {
 			padding: 5em 2em 7em;
+			background-color: $grey0;
+			width: 100%;
+			box-sizing: border-box;
+			p {
+				margin: auto;
+			}
 		}
 		&:nth-child(2) {
 			background: $white;

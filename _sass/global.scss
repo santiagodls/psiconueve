@@ -2,8 +2,10 @@
 html, body {
 	height: 100%;
 	width: 100%;
-	background: $grey0;
 	font-family: $osans;
+}
+body {
+	overflow-x: hidden;
 }
 body.no-scroll{
 	position: fixed;
@@ -69,12 +71,11 @@ p {
 	z-index: 1;
 }
 .cover {
-	padding: 14em 0 5em;
+	padding: 16em 0 5em;
 	.text-wrapper {
 		text-align: center;
 		position: relative;
 		padding: 1em .5em;
-		z-index: 1;
 		.title {
 			color: $white;
 		}

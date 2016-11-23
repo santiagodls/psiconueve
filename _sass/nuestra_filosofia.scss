@@ -1,0 +1,65 @@
+#principios {
+	li {
+		position: relative;
+		padding: 4em 1em;
+		width: 100%;
+		max-width: 95em;
+		margin: auto;
+		min-height: 30em;
+		box-sizing: border-box;
+		.text-wrapper {
+			display: flex;
+			p {
+				margin: .25em 1.5em;
+			}
+		//NUMBERS
+			&:before {
+				font-family: $gothic;
+				font-size: 30em;
+				line-height: .6em;
+				color: $grey1;
+			}
+		}
+		@for $i from 1 through 9 {
+			&:nth-child(#{$i}) .text-wrapper:before {
+				content: "0#{$i}";
+			}
+		}
+		&:first-child {
+			padding-top: 6em;
+		}
+		&:last-child {
+			padding-bottom: 10em;
+		}
+		&:not(:first-child) .text-wrapper:before {
+			letter-spacing: -.04em;
+			margin-right: .05em;
+		}
+		&:nth-child(even) .text-wrapper {
+			flex-direction: row-reverse;
+			h1 {
+				text-align: right;
+			}
+		}
+		//ZIGZAG BKG
+		&:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: $grey0;
+			position: absolute;
+			top: 0;
+			transform: skewX(-25deg);
+			z-index: -2;
+		}
+		&:nth-child(3n+1):after {
+			right: -28em;
+		}
+		&:nth-child(3n+2):after {
+			left: -28em;
+		}
+		&:nth-child(3n+3):after {
+			display: none;
+		}
+	}
+}
