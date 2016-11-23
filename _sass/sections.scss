@@ -1,3 +1,5 @@
+//## SECTIONS #######
+//Nuestra filosofía
 #principios {
 	li {
 		position: relative;
@@ -62,5 +64,38 @@
 		&:nth-child(3n+3):after {
 			display: none;
 		}
+	}
+}
+//Áreas de Intervención
+@for $i from 1 through 4 {
+	#areas .card:nth-child(#{$i}):before {
+		$img: 10 + $i;
+		background-image: url("../images/#{$img}.jpg")
+	}
+}
+//Metodología
+#metodologias section {
+	padding: 4em 2em 6em;
+	&:first-child {
+		padding-top: 6em;
+		.title {
+			text-align: right;
+		}
+	}
+	&:nth-child(2) {
+		background: $grey0;
+		.title {
+			text-align: left;
+		}
+	}
+	.text-wrapper {
+		display: inline-block;
+		.title {
+			margin-bottom: .25em;
+		}
+	}
+	&.info {
+		max-width: 50em;
+		display: inline-block;
 	}
 }

@@ -40,7 +40,7 @@ p {
 	text-align: justify;
 	max-width: 50em;
 }
-main p + p {
+main p + p, li p {
 	margin-top: 1em;
 }
 .intro {
@@ -123,7 +123,7 @@ main p + p {
 		max-width: 32em;
 		padding: 3em 4em 5em;
 		margin-bottom: 10em;
-		&.exception {
+		&.excp {
 			margin-bottom: 6em;
 		}
 		.title {
@@ -147,11 +147,5 @@ main p + p {
 		background-size: cover;
 		max-height: 50em;
 		top: 6.5em;
-	}
-}
-@for $i from 1 through 4 {
-	#areas .card:nth-child(#{$i}):before {
-		$img: 10 + $i;
-		background-image: url("../images/#{$img}.jpg")
 	}
 }
