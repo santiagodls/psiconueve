@@ -4,6 +4,10 @@ $(function(){
 		$(".menu-launcher, .menu-fs, header").toggleClass("active");
 		$("body").toggleClass("no-scroll");
 	});
+	$(".menu-fs li").click(function(){
+		var link = $(this).children().attr("href");
+		location.href = link;
+	})
 	var goPos = parseInt($(".go-top").css("top"));
 	$(".go-top").click(function(){
 		$("html, body").animate({scrollTop: 0}, 750, "easeInOutExpo");

@@ -53,6 +53,12 @@
 						transition-delay: $start-point + (($i / 10) / 1.5)+s;
 					}
 				}
+				&.active {
+					color: $white;
+					&:hover {
+						color: $black2;
+					}
+				}
 			}
 		}
 	}
