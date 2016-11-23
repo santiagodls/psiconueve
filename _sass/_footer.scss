@@ -64,11 +64,13 @@ footer {
 			-webkit-appearance: none;
 			&[type="email"] {
 				background: $grey1;
+				width: 16em;
 			}
 			&[type="submit"] {
 				background: $green0;
 				color: $white;
 				cursor: pointer;
+				width: 4em;
 				&::-moz-focus-inner {
 					border: 0;
 				}

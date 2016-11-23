@@ -7,12 +7,7 @@ $(function(){
 	var goPos = parseInt($(".go-top").css("top"));
 	$(".go-top").click(function(){
 		$("html, body").animate({scrollTop: 0}, 750, "easeInOutExpo");
-	})
-	// .hover(function(){
-	// 	$(this).stop().animate({top: goPos-5}, 500, "easeOutElastic", function(){
-	// 		$(this).stop().animate({top: goPos}, 500, "easeOutElastic");
-	// 	}), function(){$(this).preventDefault();}
-	// });
+	});
 });
 
 //ANIMATIONS
