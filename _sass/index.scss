@@ -7,6 +7,7 @@
 	justify-content: center;
 	padding-left: 2em;
 	background-image: url('../images/01.jpg');
+	text-align: left;
 	.title {
 		font-size: 5em;
 		line-height: 1em;
@@ -37,7 +38,6 @@
 		justify-content: space-between;
 		max-width: 42em;
 		margin: auto;
-		text-align: center;
 		li {
 			width: 13em;
 			margin: 4em 1em;
@@ -61,7 +61,6 @@
 	flex-direction: column;
 	align-items: center;
 	.content {
-		text-align: center;
 		&:nth-child(1) {
 			padding: 5em 2em 7em;
 			background-color: $grey0;
@@ -132,6 +131,7 @@
 				margin: auto;
 				p{
 					width: 48%;
+					margin-top: 0;
 				}
 			}
 		}

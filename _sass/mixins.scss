@@ -2,12 +2,15 @@
 	width: $logo-width;
 	height: $logo-width * 31.92 / 100;
 }
-@mixin transparent-layer($color, $opacity) {
+@mixin layer {
 	content: "";
 	position: absolute;
 	top: 0; left: 0;
 	width: 100%;
 	height: 100%;
+}
+@mixin transparent-layer($color, $opacity) {
+	@include layer;
 	background: $color;
 	opacity: $opacity;
 }
