@@ -14,3 +14,12 @@
 	background: $color;
 	opacity: $opacity;
 }
+@mixin iconbkg($dimensions, $top, $right, $left, $bkg) {
+	content: "";
+	width: $dimensions;
+	height: $dimensions;
+	position: absolute;
+	top: $top; left: $left; right: $right;
+	background: url("../images/#{$bkg}.svg") no-repeat;
+	z-index: -1;
+}

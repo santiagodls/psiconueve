@@ -38,7 +38,7 @@ p {
 	text-indent: 1em;
 	line-height: 1.75em;
 	text-align: justify;
-	max-width: 50em;
+	max-width: $p-em;
 }
 main p + p, li p {
 	margin-top: 1em;
@@ -69,6 +69,17 @@ main p + p, li p {
 	}
 	&:after {
 		margin-left: .25em;
+	}
+}
+.info {
+	color: $blue;
+	border: 0.1em solid $blue;
+	box-sizing: border-box;
+	position: relative;
+	&:before{
+		@include iconbkg(4.75em, 0, 0, 50%, "info");
+		transform: translate(-50%, -50%);
+		z-index: 1;
 	}
 }
 

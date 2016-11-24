@@ -75,27 +75,57 @@
 }
 //Metodología
 #metodologias section {
-	padding: 4em 2em 6em;
+	padding: 5em 4em 6em;
+	.text-wrapper {
+		display: inline-block;
+		position: relative;
+		max-width: $p-em;
+	}
 	&:first-child {
 		padding-top: 6em;
+		.text-wrapper:before {
+			@include iconbkg(23em, -1em, 0, -10%, "persona");
+			background-position: left;
+		}
 		.title {
 			text-align: right;
+			margin: 0 -.5em .25em 0;
 		}
 	}
 	&:nth-child(2) {
 		background: $grey0;
+		.text-wrapper {
+			z-index: 1;
+			&:before {
+				@include iconbkg(23em, -1em, -5%, auto, "personas");
+			}
+		}
 		.title {
 			text-align: left;
+			margin: 0 0 .25em -.5em;
 		}
-	}
-	.text-wrapper {
-		display: inline-block;
-		.title {
-			margin-bottom: .25em;
+		li{
+			position: relative;
+			box-sizing: border-box;
+			margin-left: 2em;
+			&:before {
+				@include iconbkg(7em, 50%, auto, -4.5em, "lista");
+				transform: translateY(-50%);
+				background-size: 100% 400%;
+			}
+			$value: 0;
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}):before {
+					background-position: 0 $value*1%;
+				}
+				$value: $value+33.3;
+			}
 		}
 	}
 	&.info {
-		max-width: 50em;
+		max-width:50em;
 		display: inline-block;
+		padding: 5em 5.5em 5.5em;
+		margin: 6em 2em 8em;
 	}
 }
