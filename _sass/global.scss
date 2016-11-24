@@ -86,6 +86,8 @@ main p + p, li p {
 }
 .zigzag {
 	li{
+		padding: 4em 2em 6em;
+		min-height: 12em;
 		.text-wrapper {
 			display: inline-flex;
 			text-align: left;
@@ -103,6 +105,15 @@ main p + p, li p {
 	}
 	&.iconbkg li:nth-child(even) .text-wrapper:before {
 		margin-left: -5em;
+	}
+	&.iconbkg li {
+		.text-wrapper {
+			position: relative;
+			z-index: 1;
+		}
+		&:nth-child(odd) {
+			background: $grey0;
+		}
 	}
 }
 

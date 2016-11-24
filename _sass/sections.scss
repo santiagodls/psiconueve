@@ -177,18 +177,9 @@
 		}
 	}
 	li {
-		padding: 4em 2em 6em;
-		min-height: 12em;
-		p {
-			display: inline-block;
-		}
-		.text-wrapper {
-			position: relative;
-			z-index: 1;
-			&:before {
-				@include icon(15em, "servicios");
-				background-size: 100% 500%;
-			}
+		.text-wrapper:before {
+			@include icon(15em, "servicios");
+			background-size: 100% 500%;
 		}
 		$value: 0;
 		@for $i from 1 through 5 {
@@ -197,9 +188,6 @@
 			}
 			$value: $value+25;
 		}
-		&:nth-child(odd) {
-			background: $grey0;
-		}
 	}
 	.info {
 		max-width:50em;
@@ -207,6 +195,39 @@
 		&:before {
 			width: 3.5em;
 			height: 3.5em;
+		}
+	}
+}
+//Cursos y talleres
+#recursos {
+	.zigzag li {
+		.text-wrapper:before {
+			@include icon(15em, "cursos-talleres");
+			background-size: 100% 300%;
+		}
+		$value: 0;
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) .text-wrapper:before {
+				background-position: 0 $value*1%;
+			}
+			$value: $value+50;
+		}
+	}
+}
+#talleres .card {
+	.content {
+		max-width: 28em;
+	}
+	&:first-child{
+		margin-top: 8em;
+		&:before {
+			max-height: 42em;
+		}
+	}
+	@for $i from 1 through 2 {
+		&:nth-child(#{$i}):before {
+			$img: 17 + $i;
+			background-image: url("../images/#{$img}.jpg");
 		}
 	}
 }
