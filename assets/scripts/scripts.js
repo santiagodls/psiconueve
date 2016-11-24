@@ -1,3 +1,17 @@
+//DOM INSERTIONS
+$(function(){
+	//bkg's for nav05
+	var source = $("#equipo-fundador li");
+	if(source.length > 0) {
+		source.each(function(i,e){
+			var e = $(e),
+			name = e.find("h2").text(),
+			output = name.split(/\s+/).slice(0,2).join("");
+			e.append("<i class='bkg'>"+output+"</i>");
+		});
+	}
+});
+
 //ACTIONS
 $(function(){
 	$(".menu-launcher").click(function(){

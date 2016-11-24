@@ -129,3 +129,37 @@
 		margin: 6em 2em 8em;
 	}
 }
+//Quienes somos
+#equipo-fundador li{
+	padding: 5em 2em 6em;
+	min-height: 20em;
+	position: relative;
+	z-index: 1;
+	p {
+		display: inline-block;
+	}
+	span {
+		font-weight: bold;
+		color: $green1;
+	}
+	.bkg {
+		position: absolute;
+		font-family: $osans-cnd;
+		font-size: 35em;
+		line-height: .6em;
+		bottom: 0; left: -.2em;
+		z-index: -1;
+	}
+	&:nth-child(odd) {
+		background: $grey0;
+		.bkg {
+			color: $white;
+		}
+	}
+	&:nth-child(even) {
+		background: $white;
+		.bkg {
+			color: $grey0;
+		}
+	}
+}
