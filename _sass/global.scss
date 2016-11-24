@@ -75,11 +75,34 @@ main p + p, li p {
 	color: $blue;
 	border: 0.1em solid $blue;
 	box-sizing: border-box;
+	display: inline-block;
+	margin: 6em 2em 8em;
 	position: relative;
 	&:before{
-		@include iconbkg(4.75em, 0, 0, 50%, "info");
+		@include iconbkg(4em, 0, 0, 50%, "info");
 		transform: translate(-50%, -50%);
 		z-index: 1;
+	}
+}
+.zigzag {
+	li{
+		.text-wrapper {
+			display: inline-flex;
+			text-align: left;
+			p {
+				margin: auto 1.5em;
+			}
+		}
+		&:nth-child(even) .text-wrapper {
+			flex-direction: row-reverse;
+			text-align: right;
+		}
+	}
+	&.iconbkg li:nth-child(odd) .text-wrapper:before {
+		margin-right: -5em;
+	}
+	&.iconbkg li:nth-child(even) .text-wrapper:before {
+		margin-left: -5em;
 	}
 }
 
@@ -146,10 +169,10 @@ main p + p, li p {
 			z-index: -1;
 		}
 	}
-	&:nth-child(odd), &.inverse:nth-child(even) {
+	&:nth-child(odd), &.reverse:nth-child(even) {
 		text-align: right;
 	}
-	&:nth-child(even), &.inverse:nth-child(odd) {
+	&:nth-child(even), &.reverse:nth-child(odd) {
 		text-align: left;
 	}
 	&:before {

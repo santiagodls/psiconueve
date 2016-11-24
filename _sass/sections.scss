@@ -9,19 +9,12 @@
 		margin: auto;
 		min-height: 30em;
 		box-sizing: border-box;
-		.text-wrapper {
-			display: flex;
-			text-align: left;
-			p {
-				margin: .25em 1.5em;
-			}
 		//NUMBERS
-			&:before {
-				font-family: $gothic;
-				font-size: 30em;
-				line-height: .6em;
-				color: $grey1;
-			}
+		.text-wrapper:before {
+			font-family: $gothic;
+			font-size: 30em;
+			line-height: .6em;
+			color: $grey1;
 		}
 		@for $i from 1 through 9 {
 			&:nth-child(#{$i}) .text-wrapper:before {
@@ -37,12 +30,6 @@
 		&:not(:first-child) .text-wrapper:before {
 			letter-spacing: -.04em;
 			margin-right: .05em;
-		}
-		&:nth-child(even) .text-wrapper {
-			flex-direction: row-reverse;
-			h1 {
-				text-align: right;
-			}
 		}
 		//ZIGZAG BKG
 		&:after {
@@ -70,7 +57,7 @@
 @for $i from 1 through 4 {
 	#areas .card:nth-child(#{$i}):before {
 		$img: 10 + $i;
-		background-image: url("../images/#{$img}.jpg")
+		background-image: url("../images/#{$img}.jpg");
 	}
 }
 //Metodología
@@ -124,9 +111,7 @@
 	}
 	&.info {
 		max-width:50em;
-		display: inline-block;
 		padding: 5em 5.5em 5.5em;
-		margin: 6em 2em 8em;
 	}
 }
 //Quienes somos
@@ -160,6 +145,68 @@
 		background: $white;
 		.bkg {
 			color: $grey0;
+		}
+	}
+}
+//Servicios
+#area-servicios .card {
+	.content {
+		max-width: 28em;
+	}
+	&:before {
+		max-height: 38em;
+	}
+	@for $i from 1 through 3 {
+		&:nth-child(#{$i}):before {
+			$img: 14 + $i;
+			background-image: url("../images/#{$img}.jpg");
+		}
+	}
+}
+#lista-servicios {
+	.intro {
+		padding-top: 4em;
+		position: relative;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 7em;
+			display: block;
+			background: url("../images/evaluaciones.svg") no-repeat center;
+			margin-bottom: 2.5em;
+		}
+	}
+	li {
+		padding: 4em 2em 6em;
+		min-height: 12em;
+		p {
+			display: inline-block;
+		}
+		.text-wrapper {
+			position: relative;
+			z-index: 1;
+			&:before {
+				@include icon(15em, "servicios");
+				background-size: 100% 500%;
+			}
+		}
+		$value: 0;
+		@for $i from 1 through 5 {
+			&:nth-child(#{$i}) .text-wrapper:before {
+				background-position: 0 $value*1%;
+			}
+			$value: $value+25;
+		}
+		&:nth-child(odd) {
+			background: $grey0;
+		}
+	}
+	.info {
+		max-width:50em;
+		padding: 2.5em;
+		&:before {
+			width: 3.5em;
+			height: 3.5em;
 		}
 	}
 }

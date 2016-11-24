@@ -14,6 +14,14 @@
 	background: $color;
 	opacity: $opacity;
 }
+@mixin icon($dimensions, $bkg) {
+	content: "";
+	width: $dimensions;
+	min-width: $dimensions;
+	height: $dimensions;
+	background: url("../images/#{$bkg}.svg") no-repeat;
+	display: inline-block;
+}
 @mixin iconbkg($dimensions, $top, $right, $left, $bkg) {
 	content: "";
 	width: $dimensions;
