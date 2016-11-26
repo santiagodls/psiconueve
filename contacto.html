@@ -31,7 +31,7 @@ subtitle: A tu disposición cuando lo necesites
 		<div class="group-wrapper">
 			<div class="form-group">
 				<label>Teléfono</label>
-				<input type="tel" name="telefono"/>
+				<input type="tel" name="telefono" required/>
 			</div>
 			<div class="form-group">
 				<label>E-mail</label>
@@ -40,7 +40,7 @@ subtitle: A tu disposición cuando lo necesites
 		</div>
 		<div class="form-group">
 			<label>Motivo</label>
-			<textarea name="motivo" rows="6" required></textarea>
+			<textarea name="motivo" placeholder="En español, inglés o italiano..." rows="6" required></textarea>
 		</div>
 		<div class="reverse">
 			<input type="submit" value="Contactar"/>
@@ -57,12 +57,12 @@ subtitle: A tu disposición cuando lo necesites
 		<div class="form-group">
 			<label>¿Cómo desea la respuesta?</label>
 			<div class="group-wrapper">
-				<select>
+				<select required>
 					<option value="email">E-mail</option>
 					<option value="telefono">Teléfono</option>
 					<option value="postal">Correo postal</option>
 				</select>
-				<input type="text" required/>
+				<input type="text" name="" required/>
 			</div>
 			<p>
 				(En cualquier caso respetamos la confidencialidad de la consulta y respuesta y le contestaremos a la mayor brevedad)
@@ -70,7 +70,7 @@ subtitle: A tu disposición cuando lo necesites
 		</div>
 		<div class="form-group">
 			<label>Consulta, duda o pregunta</label>
-			<textarea name="consulta" rows="6" required></textarea>
+			<textarea name="consulta" placeholder="En español, inglés o italiano..." rows="6" required></textarea>
 		</div>
 		<div class="reverse">
 			<input type="submit" value="Consultar"/>
