@@ -212,3 +212,52 @@ main p + p, li p {
 		top: 6.5em;
 	}
 }
+
+//## TOOLTIPS #######
+.tooltip-wrapper {
+	text-align: justify;
+	> * {
+		display: inline-block;
+		margin: 0;
+	}
+	p:not(:first-child) {
+		text-indent: 0;
+	}
+}
+.tooltip {
+	position: relative;
+	display: inline-block;
+	color: $green1;
+	font-weight: bold;
+	cursor: pointer;
+	.tooltiptext {
+		visibility: hidden;
+		background-color: $black1;
+		color: $white;
+		box-sizing: border-box;
+		padding: .5em 1em;
+		border-radius: .25em;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+		opacity: 0;
+		transition: opacity .3s;
+		&:after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -.4em;
+			border-width: .4em;
+			border-style: solid;
+			border-color: $black1 transparent transparent transparent;
+		}
+	}
+	&:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+		cursor: auto;
+	}
+}
