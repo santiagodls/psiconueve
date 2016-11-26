@@ -116,8 +116,9 @@
 }
 //Quienes somos
 #equipo-fundador li{
-	padding: 5em 2em 6em;
-	min-height: 20em;
+	box-sizing: border-box;
+	padding: 3em 2em 7em;
+	min-height: 18em;
 	position: relative;
 	z-index: 1;
 	p {
@@ -130,9 +131,9 @@
 	.bkg {
 		position: absolute;
 		font-family: $osans-cnd;
-		font-size: 35em;
+		font-size: 42em;
 		line-height: .6em;
-		bottom: 0; left: -.2em;
+		bottom: 0; left: -.1em;
 		z-index: -1;
 	}
 	&:nth-child(odd) {
@@ -146,6 +147,24 @@
 		.bkg {
 			color: $grey0;
 		}
+	}
+	&:last-child {
+		padding-bottom: 10em;
+	}
+	.individual {
+		width: 10em;
+		height: 10em;
+		display: block;
+		margin: 0 auto;
+		background: url("../images/individual.png");
+		background-size: 100% 900%;
+	}
+	$value: 0;
+	@for $i from 1 through 9 {
+		&:nth-child(#{$i}) .individual {
+			background-position: 0 $value*1%;
+		}
+		$value: $value+12.5;
 	}
 }
 //Servicios
