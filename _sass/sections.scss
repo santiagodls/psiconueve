@@ -231,3 +231,106 @@
 		}
 	}
 }
+//Contacto
+#contacto {
+	.data {
+		font-size: 2em;
+		display: inline-flex;
+		margin: 2.5em 0;
+		h1 {
+			font-family: $osans;
+		}
+		.contact {
+			&:before {
+				margin-right: .15em;
+			}
+			&:last-child:before {
+				margin-left: 1em;
+			}
+		}
+	}
+	#map {
+		height: 30em;
+		width: 100%;
+		.gm-style-iw{
+			* {
+				display: block;
+				padding: .25em;
+			}
+			h4, p {
+				margin: 0;
+				padding: 0;
+			}
+			h4 {
+				font-size: 1.5em;
+			}
+		}
+	}
+	.address {
+		background: $green1;
+		color: $white;
+		font-size: 1.5em;
+		font-family: $osans;
+		padding: .5em;
+	}
+}
+#formularios {
+	max-width: 40em;
+	margin: auto;
+	form {
+		margin: 5em 1em;
+		&:first-child {
+			margin-top: 8em;
+		}
+		&:last-child {
+			margin-bottom: 8em;
+		}
+		input, textarea, select {
+			display: block;
+			box-sizing: border-box;
+			padding: .25em;
+			border: .125em solid $grey1;
+			width: 100%;
+			&:focus {
+				border-color: $green0;
+			}
+		}
+		[type="submit"] {
+			width: auto;
+			display: inline-block;
+			margin-top: 2em;
+			padding: .5em 1em;
+			background: $green1;
+			color: $white;
+			cursor: pointer;
+			border: 0;
+			&:hover {
+				opacity: .9;
+			}
+		}
+		.form-group {
+			margin: .5em 0;
+			text-align: left;
+			p {
+				text-indent: 0;
+				margin: .5em 0;
+			}
+			label {
+				line-height: 2em;
+			}
+		}
+		.group-wrapper {
+			display: flex;
+			& > :first-child {
+				max-width: 15em;
+			}
+			& > :last-child {
+				flex: 1;
+				margin-left: 1em;
+			}
+		}
+		.reverse {
+			text-align: right;
+		}
+	}
+}

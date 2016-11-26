@@ -71,6 +71,24 @@ main p + p, li p {
 		margin-left: .25em;
 	}
 }
+.contact {
+	font-size: 1.1em;
+	span {
+		color: $green0;
+	}
+	&:before {
+		@include icon(1.3em, "contacto");
+		background-size: 100% 200%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&.tel:before {
+		background-position: 0 0;
+	}
+	&.mail:before {
+		background-position: 0 100%;
+	}
+}
 .info {
 	color: $blue;
 	border: 0.1em solid $blue;

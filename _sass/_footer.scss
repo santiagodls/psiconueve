@@ -41,20 +41,8 @@ footer {
 			font-weight: 600;
 			color: $green0;
 		}
-		.tel {
-			font-size: 1.1em;
-			&:before {
-				content: "";
-				width: 1.3em;
-				height: 1.3em;
-				background: url("../images/telefono.svg") no-repeat center;
-				display: inline-block;
-				vertical-align: middle;
-				margin: -.3em .5em 0 0;
-			}
-			span {
-				color: $green0;
-			}
+		.contact:before {
+			margin: -.3em .5em 0 0;
 		}
 	}
 	.newsletter {

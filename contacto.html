@@ -3,3 +3,68 @@ nav: 8
 title : Contacto
 subtitle: A tu disposición cuando lo necesites
 ---
+<section id="contacto">
+	<div class="data">
+		<h1 class="contact tel">(+34) 695 642 851</h1>
+		<h1 class="contact mail">info@psiconueve.es</h1>
+	</div>
+	<div id="map"></div>
+</section>
+<section id="formularios">
+	<form class="contacto">
+		<p>
+			Si desea contactar personalmente con nosotros puede llamarnos a nuestro teléfono (24hs/7d) o bien rellenar el siguiente formulario:
+		</p>
+		<div class="form-group">
+			<label>Nombre</label>
+			<input type="text" name="nombre" required autofocus/>
+		</div>
+		<div class="group-wrapper">
+			<div class="form-group">
+				<label>Teléfono</label>
+				<input type="tel" name="telefono"/>
+			</div>
+			<div class="form-group">
+				<label>E-mail</label>
+				<input type="email" name="email" required/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Motivo</label>
+			<textarea name="motivo" rows="6" required></textarea>
+		</div>
+		<div class="reverse">
+			<input type="submit" value="Contactar"/>
+		</div>
+	</form>
+	<form class="consulta">
+		<p>
+			Si desea realizar cualquier consulta, duda o pregunta puede hacerlo rellenando el siguiente formulario:
+		</p>
+		<div class="form-group">
+			<label>Nombre (o sinónimo si lo prefiere)</label>
+			<input type="text" name="nombre" required/>
+		</div>
+		<div class="form-group">
+			<label>¿Cómo desea la respuesta?</label>
+			<div class="group-wrapper">
+				<select>
+					<option value="email">E-mail</option>
+					<option value="telefono">Teléfono</option>
+					<option value="postal">Correo postal</option>
+				</select>
+				<input type="text" required/>
+			</div>
+			<p>
+				(En cualquier caso respetamos la confidencialidad de la consulta y respuesta y le contestaremos a la mayor brevedad)
+			</p>
+		</div>
+		<div class="form-group">
+			<label>Consulta, duda o pregunta</label>
+			<textarea name="consulta" rows="6" required></textarea>
+		</div>
+		<div class="reverse">
+			<input type="submit" value="Consultar"/>
+		</div>
+	</form>
+</section>
