@@ -17,4 +17,16 @@
 			{% endfor %}
 		</ul>
 	</nav>
+	<ul class="quotes">
+		{% for quotes in site.data.quotes %}
+			<li>
+				<q>
+					{{ quotes.quote }}
+				</q>
+				<p>
+					{{ quotes.author }}
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
 </div>
