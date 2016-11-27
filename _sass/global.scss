@@ -11,6 +11,9 @@ body.no-scroll{
 	position: fixed;
 	overflow-y: scroll;
 }
+body.no-scroll-modal {
+	overflow-y: hidden;
+}
 main {
 	text-align: center;
 }

@@ -2,6 +2,7 @@
 nav: 8
 title : Contacto
 subtitle: A tu disposición cuando lo necesites
+email: itnas06@gmail.com
 ---
 <section id="contacto">
 	<div class="data">
@@ -11,7 +12,7 @@ subtitle: A tu disposición cuando lo necesites
 	<div id="map"></div>
 </section>
 <section id="formularios">
-	<form class="contacto">
+	<form id="formulario-contactar" method="POST">
 		<div class="tooltip-wrapper">
 			<p>
 				Si desea contactar <b>personalmente</b> con nosotros puede llamarnos a nuestro
@@ -41,12 +42,13 @@ subtitle: A tu disposición cuando lo necesites
 		<div class="form-group">
 			<label>Motivo</label>
 			<textarea name="motivo" placeholder="En español, inglés o italiano..." rows="6" required></textarea>
+			<input type="text" name="_gotcha" style="display:none" />
 		</div>
 		<div class="reverse">
-			<input type="submit" value="Contactar"/>
+			<input id="contactar" type="submit" value="Contactar"/>
 		</div>
 	</form>
-	<form class="consulta">
+	<form id="formulario-consultar" method="POST">
 		<p>
 			Si desea realizar cualquier <b>consulta, duda o pregunta</b> puede hacerlo rellenando el siguiente formulario:
 		</p>
@@ -57,12 +59,12 @@ subtitle: A tu disposición cuando lo necesites
 		<div class="form-group">
 			<label>¿Cómo desea la respuesta?</label>
 			<div class="group-wrapper">
-				<select required>
+				<select name="respuesta" required>
 					<option value="email">E-mail</option>
 					<option value="telefono">Teléfono</option>
 					<option value="postal">Correo postal</option>
 				</select>
-				<input type="text" name="" required/>
+				<input id="select-target" type="text" name="" required/>
 			</div>
 			<p>
 				(En cualquier caso respetamos la confidencialidad de la consulta y respuesta y le contestaremos a la mayor brevedad)
@@ -71,9 +73,10 @@ subtitle: A tu disposición cuando lo necesites
 		<div class="form-group">
 			<label>Consulta, duda o pregunta</label>
 			<textarea name="consulta" placeholder="En español, inglés o italiano..." rows="6" required></textarea>
+			<input type="text" name="_gotcha" style="display:none" />
 		</div>
 		<div class="reverse">
-			<input type="submit" value="Consultar"/>
+			<input id="consultar" type="submit" value="Consultar"/>
 		</div>
 	</form>
 </section>
