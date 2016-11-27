@@ -9,9 +9,9 @@ layout: compress
 	<body>
 		{% include header.html %}
 		<main>
-			{% if page.url != "{{ site.github.url }}/index.html" %}
+			{% unless page.url == "/index.html" or page.url == "{{ site.github.url }}/" %}
 				{% include cover.html %}
-			{% endif %}
+			{% endunless %}
 			{{ content }}
 		</main>
 		{% include footer.html %}
