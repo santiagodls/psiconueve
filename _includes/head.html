@@ -7,3 +7,6 @@
 <script src="{{ site.github.url }}/assets/scripts/jarallax.min.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/assets/scripts/scripts.js"></script>
 <script type="text/javascript" src="{{ site.github.url }}/assets/scripts/map.js"></script>
+{% if jekyll.environment == "development" %}
+	<script type="text/javascript" src="/assets/scripts/map.js"></script>
+{% endif %}
