@@ -4,8 +4,8 @@
 		<span class="menu-bar"></span>
 	</button>
 </header>
-<div class="menu-fs">
-	<nav class="menu-options">
+<div id="menu-fs">
+	<nav id="menu-options">
 		<ul>
 			{% assign nav_menu = site.html_pages | sort:"nav" %}
 			{% for i in nav_menu %}
@@ -17,15 +17,17 @@
 			{% endfor %}
 		</ul>
 	</nav>
-	<ul class="quotes">
+	<ul id="quotes">
 		{% for quotes in site.data.quotes %}
-			<li>
-				<q>
-					{{ quotes.quote }}
-				</q>
-				<p>
-					{{ quotes.author }}
-				</p>
+			<li class={% if forloop.first %}"visible"{% else %}"hidden"{% endif %}>
+				<blockquote>
+					<p>
+						{{ quotes.quote }}
+					</p>
+					<p>
+						{{ quotes.author }}
+					</p>
+				</blockquote>
 			</li>
 		{% endfor %}
 	</ul>

@@ -12,13 +12,26 @@ $(function(){
 	}
 });
 
+//CORRECTIONS
+$(function(){
+	if($("#formularios").length > 0) {
+		$("html, body").scrollTop(0);
+	}
+});
+
 //ACTIONS
 $(function(){
 	$(".menu-launcher").click(function(){
-		$(".menu-launcher, .menu-fs, header").toggleClass("active");
+		$(".menu-launcher, #menu-fs, #quotes, header").toggleClass("active");
 		$("body").toggleClass("no-scroll");
+		if ($("#quotes").hasClass("active")) {
+			quoteRotator();
+		}
+		else {
+			clearInterval(quoteInterval);
+		}
 	});
-	$(".menu-fs li").click(function(){
+	$("#menu-options li").click(function(){
 		var link = $(this).children().attr("href");
 		location.href = link;
 	})
@@ -29,9 +42,21 @@ $(function(){
 });
 
 //ANIMATIONS
+var textInterval;
+var quoteInterval;
 function textRotator() {
-	var current = $("#dinamic-end b.visible"),
-			first = $("#dinamic-end b").first(),
+	textInterval = setInterval(function(){
+		rotator("dinamic-end b");
+	}, 3500);
+}
+function quoteRotator() {
+	quoteInterval = setInterval(function(){
+		rotator("quotes li");
+	}, 5000);
+}
+function rotator(element) {
+	var current = $("#"+element+".visible"),
+			first = $("#"+element).first(),
 			params = "visible hidden";
 	if (current.next().length == 0) {
 		current.toggleClass(params);
@@ -40,7 +65,6 @@ function textRotator() {
 	else {
 		current.toggleClass(params).next().toggleClass(params);
 	}
-	setTimeout(textRotator, 3500);
 }
 textRotator();
 
