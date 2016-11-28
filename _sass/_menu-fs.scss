@@ -10,7 +10,6 @@
 		height: 100%;
 		position: absolute;
 		top: 0; left: -100%;
-		z-index: -1;
 		background: $black2;
 		transition: left .5s ease-out 0s;
 		ul {
@@ -63,14 +62,9 @@
 		}
 	}
 	#quotes {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: right;
 		font-size: 1.1em;
 		opacity: 0;
-		transition: opacity 1s 1.6s;
-		z-index: -2;
+		transition: opacity .3s;
 		li {
 			max-width: 40%;
 			position: absolute;
@@ -100,6 +94,7 @@
 		}
 		&.active {
 			opacity: 1;
+			transition: opacity 1s 1.6s;
 		}
 	}
 }
