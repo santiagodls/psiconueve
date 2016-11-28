@@ -110,7 +110,7 @@ $(function(){
 		}
 		//else continue to ajax
 		$.ajax({
-			url: "https://formspree.io/itnas06@gmail.com",
+			url: "https://formspree.io/info@psiconueve.es",
 			method: "POST",
 			data: message,
 			dataType: "json",
