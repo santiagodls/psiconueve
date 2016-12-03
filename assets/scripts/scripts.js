@@ -82,7 +82,19 @@ $(function(){
 		$(".jarallax").addClass("ms").jarallax("destroy");
 	}
 });
-
+var parallaxTimer;
+$(window).resize(function(){
+	if($(".nav05").length > 0) {
+		clearTimeout(parallaxTimer);
+		parallaxTimer = setTimeout(function(){
+			$(".nav05").jarallax("destroy");
+			$(".nav05").jarallax({
+				speed: 0.5,
+				noAndroid: true
+			});
+		}, 100);
+	}
+});
 //FORMS
 $(function(){
 	//pass select value

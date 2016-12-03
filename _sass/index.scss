@@ -5,14 +5,20 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-left: 2em;
+	padding: 0 2em;
 	background-image: url('../images/01.jpg');
 	text-align: left;
+	br {
+		display: none;
+	}
 	.title {
 		font-size: 5em;
 		line-height: 1em;
 		span {
-			// position:relative;
+			// width: 5em;
+			// font-size: 1em;
+			// display: inline-block;
+			// vertical-align: top;
 			b {
 				color: $green1;
 				position: absolute;

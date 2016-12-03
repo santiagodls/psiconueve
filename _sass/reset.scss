@@ -18,3 +18,8 @@ a {
 b {
 	font-weight: 600;
 }
+@media (max-width: 1366px) {
+	* {
+		font-size: .98em;
+	}
+}

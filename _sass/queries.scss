@@ -1,23 +1,10 @@
 /* Extra large desktops */
 @media (max-width: 1600px) {
-	#menu-fs {
-		#menu-options {
-			ul {
-				font-size: 6vh;
-			}
-		}
-	}
+
 }
 /* Large Devices, Wide Screens */
 @media (max-width : 1280px) {
-	#index-cover{
-		.title {
-			font-size: 6vw;
-		}
-		.subtitle {
-			font-size: 3.5vw;
-		}
-	}
+
 }
 
 /* Medium Devices, Desktops */
@@ -38,4 +25,85 @@
 /* Custom, iPhone Retina */
 @media (max-width : 320px) {
 
+}
+
+
+
+//## COVERS #######
+@media (max-width: 1366px) {
+	.cover {
+		padding: 20% 0 5%;
+		&.nav05 {
+			background-image: url("../images/05b.jpg");
+		}
+	}
+	#index-cover{
+		.title {
+			font-size: 6vw;
+		}
+		.subtitle {
+			font-size: 4vw;
+		}
+	}
+}
+@media (max-width: 960px) {
+	.cover.nav05 {
+		background-image: url("../images/05c.jpg");
+	}
+	#index-cover{
+		br {
+			display: block;
+		}
+		.title {
+			font-size: 3.8em;
+		}
+		.subtitle {
+			font-size: 2.5em;
+			max-width: 12em;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.cover .text-wrapper .title {
+		font-size: 6vw;
+	}
+	#index-cover{
+		padding: 0 $mobile-padding;
+		background-position: right;
+		.title {
+			font-size: 3.3em;
+		}
+		.subtitle {
+			font-size: 2em;
+		}
+	}
+}
+@media (max-width: 660px) {
+	.cover .text-wrapper .subtitle {
+		font-size: 3.8vw;
+	}
+}
+@media (max-width: 480px) {
+	.cover .text-wrapper {
+		.title {
+			font-size: 1.9em;
+		}
+		.subtitle {
+			font-size: 1.2em;
+		}
+	}
+	.underlined {
+		width: 90%;
+	}
+}
+
+//## MENU-FS #######
+@media (max-width: 1600px) {
+	#menu-fs {
+		#menu-options {
+			ul {
+				font-size: 6vh;
+			}
+		}
+	}
 }
