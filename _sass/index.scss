@@ -1,5 +1,6 @@
 #index-cover {
 	height: calc(100vh - 3em);
+	min-height: 25em;
 	max-height: 50em;
 	z-index: 1;
 	display: flex;

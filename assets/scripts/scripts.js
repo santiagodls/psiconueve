@@ -23,7 +23,7 @@ $(function(){
 $(function(){
 	//menu
 	$(".menu-launcher").click(function(){
-		$(".menu-launcher, #menu-fs, #quotes, header").toggleClass("active");
+		$(".menu-launcher, #menu-fs, #quotes, #main-header").toggleClass("active");
 		$("body").toggleClass("no-scroll");
 		if ($("#quotes").hasClass("active")) {
 			quoteRotator();
@@ -70,7 +70,7 @@ function rotator(element) {
 }
 textRotator();
 
-// PARALLAX
+//PARALLAX
 $(function(){
 	$('.jarallax').jarallax({
 		speed: 0.5,
@@ -95,6 +95,7 @@ $(window).resize(function(){
 		}, 100);
 	}
 });
+
 //FORMS
 $(function(){
 	//pass select value
@@ -102,7 +103,6 @@ $(function(){
 	$("#formulario-consultar select").change(function(){
 		selectedValue();
 	});
-
 	//handle submit
 	$("#contactar, #consultar").click(function(){
 		var value = $(this).attr("value").toLowerCase(),
@@ -158,4 +158,29 @@ function selectedValue() {
 	var select = $("#formulario-consultar select"),
 			selectTarget = $("#select-target");
 	selectTarget.attr("name", select.find(":selected").attr("value"));
+}
+
+//RESPONSIVE
+//Index-cover height
+var responsiveTimer,
+		initialWW,
+		md = new MobileDetect(window.navigator.userAgent);
+$(function(){
+	if($("#index-cover").length > 0) {
+		setHeight();
+	}
+})
+$(window).resize(function(){
+	clearTimeout(responsiveTimer);
+	responsiveTimer = setTimeout(setHeight, 100);
+});
+function setHeight(){
+	var ww = window.innerWidth,
+			wh = window.innerHeight,
+			hh = $("#main-header").outerHeight(),
+			element = $("#index-cover");
+	if (element.length > 0 && ww != initialWW && md.mobile()) {
+		element.css("height", wh - hh);
+	}
+	initialWW = window.innerWidth;
 }
