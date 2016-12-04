@@ -19,7 +19,6 @@
 
 //## GLOBALES #######
 @media (max-width: 1280px) {
-
 	.right-img, .right-img.card:before {
 			background-position: right !important;
 	}
@@ -28,11 +27,8 @@
 	.title, .subtitle {
 		font-size: 2em;
 	}
-	.short-padding {
-		@include short-padding;
-	}
 	.intro {
-		@extend .short-padding;
+		@include short-padding;
 		padding-top: 4em;
 		padding-bottom: 4em;
 	}
@@ -234,6 +230,9 @@
 		}
 	}
 	#index-content {
+		.short-padding {
+			@include short-padding;
+		}
 		.content:nth-child(3) {
 			padding: 0;
 			display: flex;
@@ -313,5 +312,34 @@
 				width: 140%;
 			}
 		}
+	}
+}
+//metodologias
+@media (max-width: 768px) {
+	#metodologias section:not(.info) {
+		@include short-padding;
+		&:first-child .text-wrapper:before, &:nth-child(2) .text-wrapper:before {
+			background-position: center top;
+			left: 50%;
+			width: 120%;
+			transform: translateX(-50%);
+			height: 30em;
+		}
+		&:first-child {
+			padding-top: 5em;
+		}
+		&:nth-child(2) li {
+			margin-left: 1em;
+			&:before {
+				left: -3.5em;
+			}
+		}
+		.title {
+			text-align: center !important;
+		}
+	}
+	#metodologias section.info {
+		margin: 0;
+		padding: 4em 2em 6em;
 	}
 }
