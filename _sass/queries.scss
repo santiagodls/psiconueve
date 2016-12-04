@@ -45,9 +45,6 @@
 	}
 }
 @media (max-width: 960px) {
-	.cover.nav05 {
-		background-image: url("../images/05c.jpg");
-	}
 	#index-cover{
 		.text-wrapper {
 			font-size: .7em;
@@ -59,8 +56,20 @@
 	}
 }
 @media (max-width: 768px) {
-	.cover .text-wrapper .title {
-		font-size: 6vw;
+	.cover {
+		display: flex;
+		flex-direction: column-reverse;
+		padding: 0 0 0em;
+		height: 22em;
+		.text-wrapper {
+			padding: .25em 1em;
+			.title {
+				font-size: 6vw;
+			}
+			&:before {
+				opacity: .8;
+			}
+		}
 	}
 	#index-cover{
 		padding: 0 $mobile-padding;
@@ -84,12 +93,18 @@
 			padding-bottom: $mobile-padding * 3;
 		}
 	}
-	.cover .text-wrapper {
-		.title {
-			font-size: 1.9em;
+	.cover {
+		min-height: auto;
+		.text-wrapper {
+			.title {
+				font-size: 1.9em;
+			}
+			.subtitle {
+				font-size: 1.2em;
+			}
 		}
-		.subtitle {
-			font-size: 1.2em;
+		&.nav05 {
+			background-image: url("../images/05c.jpg");
 		}
 	}
 }
