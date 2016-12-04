@@ -1,6 +1,6 @@
 #index-cover {
 	height: calc(100vh - 3em);
-	min-height: 25em;
+	min-height: 20em;
 	max-height: 50em;
 	z-index: 1;
 	display: flex;
@@ -9,13 +9,13 @@
 	padding: 0 2em;
 	background-image: url('../images/01.jpg');
 	text-align: left;
-	br {
-		display: none;
-	}
 	.title {
 		font-size: 5em;
 		line-height: 1em;
 		span {
+			width: 4em;
+			vertical-align: top;
+			display: inline-block;
 			b {
 				color: $green1;
 				position: absolute;

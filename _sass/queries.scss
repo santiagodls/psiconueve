@@ -30,27 +30,18 @@
 
 
 //## COVERS #######
+@media (max-width: 1600px) {
+	#index-cover {
+		.text-wrapper {
+			font-size: 1vw;
+		}
+	}
+}
 @media (max-width: 1366px) {
 	.cover {
 		padding: 20% 0 5%;
 		&.nav05 {
 			background-image: url("../images/05b.jpg");
-		}
-	}
-	#index-cover{
-		.title {
-			font-size: 6vw;
-		}
-		.subtitle {
-			font-size: 4vw;
-		}
-	}
-}
-@media (max-width: 1280px) {
-	#index-cover {
-		justify-content: flex-end;
-		.subtitle {
-			padding-bottom: 20%;
 		}
 	}
 }
@@ -59,15 +50,9 @@
 		background-image: url("../images/05c.jpg");
 	}
 	#index-cover{
-		br {
-			display: block;
-		}
-		.title {
-			font-size: 3.8em;
-		}
-		.subtitle {
-			font-size: 2.5em;
-			max-width: 12em;
+		.text-wrapper {
+			font-size: .7em;
+			width: 70%;
 		}
 		&.jarallax {
 			background-position: 87% 70%;
@@ -81,11 +66,8 @@
 	#index-cover{
 		padding: 0 $mobile-padding;
 		background-position: right;
-		.title {
-			max-width: 7em;
-		}
-		.subtitle {
-			padding-bottom: $mobile-padding;
+		.text-wrapper {
+			font-size: .6em;
 		}
 	}
 }
@@ -93,18 +75,15 @@
 	.cover .text-wrapper .subtitle {
 		font-size: 3.8vw;
 	}
-	#index-cover {
-		.title {
-			font-size: 3.3em;
-		}
-		.subtitle {
-			font-size: 2em;
-		}
-	}
 }
 @media (max-width: 480px) {
 	#index-cover.jarallax {
 		background-size: 300%;
+		justify-content: flex-end;
+		.text-wrapper {
+			width: 25em;
+			padding-bottom: $mobile-padding * 3;
+		}
 	}
 	.cover .text-wrapper {
 		.title {
