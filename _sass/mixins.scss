@@ -56,3 +56,7 @@
 		margin-left: .25em;
 	}
 }
+@mixin short-padding {
+	padding-left: $mobile-padding !important;
+	padding-right: $mobile-padding !important;
+}

@@ -18,13 +18,23 @@
 }
 
 //## GLOBALES #######
+@media (max-width: 1280px) {
+
+	.right-img, .right-img.card:before {
+			background-position: right !important;
+	}
+}
 @media (max-width: 480px) {
 	.title, .subtitle {
 		font-size: 2em;
 	}
-	.rp-padding {
-		padding-left: $mobile-padding !important;
-		padding-right: $mobile-padding !important;
+	.short-padding {
+		@include short-padding;
+	}
+	.intro {
+		@extend .short-padding;
+		padding-top: 4em;
+		padding-bottom: 4em;
 	}
 }
 
@@ -155,6 +165,42 @@
 	}
 
 }
+
+//## CARDS #######
+@media (max-width: 660px) {
+	.card {
+		.text-wrapper {
+			padding: 0;
+			.content {
+				margin: 0;
+				padding-top: 0;
+				@include short-padding;
+				max-width: 100%;
+				.title {
+					display: inline-block;
+					position: relative;
+					z-index: 1;
+					padding: .5em 1em;
+					margin-bottom: 0;
+					transform: translateY(-50%);
+					&:before {
+						@include transparent-layer($grey1, .75);
+						z-index: -1;
+					}
+				}
+				&:before {
+					display: none;
+				}
+			}
+		}
+		&:before {
+			position: static;
+			display: block;
+			height: 20em;
+		}
+	}
+}
+
 //## SECTIONS #######
 // index
 @media (max-width: 660px) {
