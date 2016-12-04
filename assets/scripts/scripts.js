@@ -187,11 +187,9 @@ function setHeight(){
 	//set menu height
 	if (!menu.hasClass("horizontal") && md.phone() && ww > wh) {
 		menu.toggleClass("horizontal");
-		alert(menu.attr("class"));
 	}
 	else if(menu.hasClass("horizontal") && md.phone() && ww < wh){
 		menu.toggleClass("horizontal");
-		alert(menu.attr("class"));
 	}
 	initialWW = window.innerWidth;
 }
