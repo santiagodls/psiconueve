@@ -211,6 +211,7 @@
 		}
 		.content:nth-child(4) {
 			padding-top: 4em;
+			padding-bottom: $layout-bottom;
 			.wrapper {
 				flex-direction: column;
 				p {
@@ -218,6 +219,52 @@
 					max-width: 100%;
 					margin-bottom: 1em;
 				}
+			}
+		}
+	}
+}
+//nuestra filosofía
+@media (max-width: 960px) {
+	$bkgPos: -60%;
+	#principios {
+		li:after {
+			width: 120%;
+		}
+		li:nth-child(3n+1):after {
+			right: $bkgPos;
+		}
+		li:nth-child(3n+2):after {
+			left: $bkgPos;
+		}
+	}
+}
+@media (max-width: 768px) {
+	#principios {
+		$numPos: -.005em;
+		.text-wrapper:before {
+			position: absolute;
+			z-index: -1;
+		}
+		li:nth-child(odd) .text-wrapper:before {
+			left: $numPos;
+		}
+		li:nth-child(even) .text-wrapper:before {
+			right: $numPos;
+		}
+	}
+}
+@media (max-width: 480px) {
+	#principios {
+		.text-wrapper p {
+			margin: 0;
+		}
+		li {
+			padding: 4em $mobile-padding;
+			&:last-child {
+				padding-bottom: $layout-bottom;
+			}
+			&:after {
+				width: 140%;
 			}
 		}
 	}
