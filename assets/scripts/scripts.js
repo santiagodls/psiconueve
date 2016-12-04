@@ -70,31 +70,31 @@ function rotator(element) {
 }
 textRotator();
 
-//PARALLAX
-$(function(){
-	$('.jarallax').jarallax({
-		speed: 0.5,
-		noAndroid: true
-	});
-	var isIE = /*@cc_on!@*/false || !!document.documentMode;
-	var isEdge = !isIE && !!window.StyleMedia;
-	if (isIE || isEdge) {
-		$(".jarallax").addClass("ms").jarallax("destroy");
-	}
-});
-var parallaxTimer;
-$(window).resize(function(){
-	if($(".nav05").length > 0) {
-		clearTimeout(parallaxTimer);
-		parallaxTimer = setTimeout(function(){
-			$(".nav05").jarallax("destroy");
-			$(".nav05").jarallax({
-				speed: 0.5,
-				noAndroid: true
-			});
-		}, 100);
-	}
-});
+// //PARALLAX
+// $(function(){
+// 	$('.jarallax').jarallax({
+// 		speed: 0.5,
+// 		noAndroid: true
+// 	});
+// 	var isIE = /*@cc_on!@*/false || !!document.documentMode;
+// 	var isEdge = !isIE && !!window.StyleMedia;
+// 	if (isIE || isEdge) {
+// 		$(".jarallax").addClass("ms").jarallax("destroy");
+// 	}
+// });
+// var parallaxTimer;
+// $(window).resize(function(){
+// 	if($(".nav05").length > 0) {
+// 		clearTimeout(parallaxTimer);
+// 		parallaxTimer = setTimeout(function(){
+// 			$(".nav05").jarallax("destroy");
+// 			$(".nav05").jarallax({
+// 				speed: 0.5,
+// 				noAndroid: true
+// 			});
+// 		}, 100);
+// 	}
+// });
 
 //FORMS
 $(function(){
@@ -167,29 +167,31 @@ var responsiveTimer,
 		md = new MobileDetect(window.navigator.userAgent);
 $(function(){
 	if($("#index-cover").length > 0) {
-		setHeight();
+		setValues();
 	}
 })
 $(window).resize(function(){
 	clearTimeout(responsiveTimer);
-	responsiveTimer = setTimeout(setHeight, 100);
+	responsiveTimer = setTimeout(setValues, 100);
 });
-function setHeight(){
+function setValues(){
 	var ww = window.innerWidth,
 			wh = window.innerHeight,
 			hh = $("#main-header").outerHeight(),
-			element = $("#index-cover"),
+			iCover = $("#index-cover"),
 			menu = $("#menu-fs ul");
+
 	//set element height
-	if (element.length > 0 && ww != initialWW && md.mobile()) {
-		element.css("height", wh - hh);
+	if (iCover.length > 0 && ww != initialWW && md.mobile()) {
+		iCover.css("height", wh - hh);
 	}
-	//set menu height
+	//set menu orientation
 	if (!menu.hasClass("horizontal") && md.phone() && ww > wh) {
 		menu.toggleClass("horizontal");
 	}
 	else if(menu.hasClass("horizontal") && md.phone() && ww < wh){
 		menu.toggleClass("horizontal");
 	}
+	
 	initialWW = window.innerWidth;
 }
