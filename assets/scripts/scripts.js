@@ -178,9 +178,20 @@ function setHeight(){
 	var ww = window.innerWidth,
 			wh = window.innerHeight,
 			hh = $("#main-header").outerHeight(),
-			element = $("#index-cover");
+			element = $("#index-cover"),
+			menu = $("#menu-fs ul");
+	//set element height
 	if (element.length > 0 && ww != initialWW && md.mobile()) {
 		element.css("height", wh - hh);
+	}
+	//set menu height
+	if (!menu.hasClass("horizontal") && md.phone() && ww > wh) {
+		menu.toggleClass("horizontal");
+		alert(menu.attr("class"));
+	}
+	else if(menu.hasClass("horizontal") && md.phone() && ww < wh){
+		menu.toggleClass("horizontal");
+		alert(menu.attr("class"));
 	}
 	initialWW = window.innerWidth;
 }

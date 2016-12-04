@@ -36,6 +36,19 @@
 					cursor: pointer;
 				}
 			}
+			&.horizontal {
+				flex-wrap: wrap;
+				align-content: space-around;
+				width: 100%;
+				font-size: 8vh;
+				padding: 2em 0 1em;
+				li {
+					line-height: 2em;
+					a{
+						padding: 0;
+					}
+				}
+			}
 		}
 	}
 	&.active {
