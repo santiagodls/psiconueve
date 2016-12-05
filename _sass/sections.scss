@@ -297,7 +297,7 @@
 	max-width: 40em;
 	margin: auto;
 	form {
-		margin: 5em 1em;
+		margin: 5em $mobile-padding;
 		&:first-child {
 			margin-top: 8em;
 		}
@@ -333,9 +333,14 @@
 			p {
 				text-indent: 0;
 				margin: .5em 0;
+				&.excp {
+					font-style: italic;
+					font-size: .98;
+				}
 			}
 			label {
 				line-height: 2em;
+				font-weight: bold;
 			}
 		}
 		.group-wrapper {

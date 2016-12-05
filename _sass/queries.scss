@@ -414,3 +414,26 @@
 		}
 	}
 }
+
+//Contacto
+@media (max-width: 768px) {
+	#contacto .data {
+		flex-direction: column;
+		margin: 1.5em .5em;
+		.contact {
+			text-align: left;
+			margin-bottom: .2em;
+			&:before {
+				margin-left: 0 !important;
+			}
+		}
+	}
+	#formularios form:first-child {
+		margin-top: 5em;
+	}
+}
+@media (max-width: 480px) {
+	#contacto .data {
+		font-size: 1.5em;
+	}
+}

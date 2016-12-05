@@ -12,13 +12,6 @@ $(function(){
 	}
 });
 
-//CORRECTIONS
-$(function(){
-	if($("#formularios").length > 0) {
-		$("html, body").scrollTop(0);
-	}
-});
-
 //ACTIONS
 $(function(){
 	//menu
@@ -71,30 +64,30 @@ function rotator(element) {
 textRotator();
 
 // //PARALLAX
-// $(function(){
-// 	$('.jarallax').jarallax({
-// 		speed: 0.5,
-// 		noAndroid: true
-// 	});
-// 	var isIE = /*@cc_on!@*/false || !!document.documentMode;
-// 	var isEdge = !isIE && !!window.StyleMedia;
-// 	if (isIE || isEdge) {
-// 		$(".jarallax").addClass("ms").jarallax("destroy");
-// 	}
-// });
-// var parallaxTimer;
-// $(window).resize(function(){
-// 	if($(".nav05").length > 0) {
-// 		clearTimeout(parallaxTimer);
-// 		parallaxTimer = setTimeout(function(){
-// 			$(".nav05").jarallax("destroy");
-// 			$(".nav05").jarallax({
-// 				speed: 0.5,
-// 				noAndroid: true
-// 			});
-// 		}, 100);
-// 	}
-// });
+$(function(){
+	$('.jarallax').jarallax({
+		speed: 0.5,
+		noAndroid: true
+	});
+	var isIE = /*@cc_on!@*/false || !!document.documentMode;
+	var isEdge = !isIE && !!window.StyleMedia;
+	if (isIE || isEdge) {
+		$(".jarallax").addClass("ms").jarallax("destroy");
+	}
+});
+var parallaxTimer;
+$(window).resize(function(){
+	if($(".nav05").length > 0) {
+		clearTimeout(parallaxTimer);
+		parallaxTimer = setTimeout(function(){
+			$(".nav05").jarallax("destroy");
+			$(".nav05").jarallax({
+				speed: 0.5,
+				noAndroid: true
+			});
+		}, 100);
+	}
+});
 
 //FORMS
 $(function(){
@@ -192,6 +185,6 @@ function setValues(){
 	else if(menu.hasClass("horizontal") && md.phone() && ww < wh){
 		menu.toggleClass("horizontal");
 	}
-	
+
 	initialWW = window.innerWidth;
 }

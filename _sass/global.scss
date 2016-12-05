@@ -17,6 +17,7 @@ body.no-scroll-modal {
 main {
 	display: block;
 	text-align: center;
+	overflow: hidden;
 }
 @import "header";
 @import "footer";
