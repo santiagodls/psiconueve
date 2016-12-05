@@ -347,6 +347,7 @@
 			display: flex;
 			& > :first-child {
 				max-width: 15em;
+				width: 40%;
 			}
 			& > :last-child {
 				flex: 1;

@@ -203,11 +203,11 @@ main p + p, li p {
 .tooltip-wrapper {
 	text-align: justify;
 	> * {
-		display: inline-block;
+		display: inline;
 		margin: 0;
 	}
-	p:not(:first-child) {
-		text-indent: 0;
+	p:first-child {
+		margin-left: 1em; //same as p indent
 	}
 }
 .tooltip {
