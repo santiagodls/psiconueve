@@ -23,14 +23,16 @@
 			background-position: right !important;
 	}
 }
-@media (max-width: 480px) {
-	.title, .subtitle {
-		font-size: 2em;
-	}
+@media (max-width: 768px) {
 	.intro {
 		@include short-padding;
 		padding-top: 4em;
 		padding-bottom: 4em;
+	}
+}
+@media (max-width: 480px) {
+	.title, .subtitle {
+		font-size: 2em;
 	}
 }
 
@@ -268,6 +270,7 @@
 		}
 	}
 }
+
 //nuestra filosofía
 @media (max-width: 960px) {
 	$bkgPos: -60%;
@@ -314,6 +317,7 @@
 		}
 	}
 }
+
 //metodologias
 @media (max-width: 768px) {
 	#metodologias section:not(.info) {
@@ -341,5 +345,12 @@
 	#metodologias section.info {
 		margin: 0;
 		padding: 4em 2em 6em;
+	}
+}
+
+//Quienes somos
+@media (max-width: 720px) {
+	#equipo-fundador li {
+		@include short-padding;
 	}
 }
