@@ -272,10 +272,6 @@
 		height: 30em;
 		width: 100%;
 		.gm-style-iw{
-			* {
-				display: block;
-				padding: .25em;
-			}
 			h4, p {
 				margin: 0;
 				padding: 0;
@@ -284,13 +280,17 @@
 				font-size: 1.5em;
 			}
 		}
-	}
-	.address {
-		background: $green1;
-		color: $white;
-		font-size: 1.5em;
-		font-family: $osans;
-		padding: .5em;
+		.gm-style-pbc {
+			z-index: 10 !important;
+		}
+		.gm-style-pbt {
+			font-size: 2em !important;
+			font-weight: bold;
+			text-align: center;
+			text-indent: 0;
+			width: 80%;
+			margin: auto;
+		}
 	}
 }
 #formularios {
