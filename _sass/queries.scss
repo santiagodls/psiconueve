@@ -29,10 +29,42 @@
 		padding-top: 4em;
 		padding-bottom: 4em;
 	}
+	.info {
+		margin: 0;
+		padding: 4em 2em 5em !important;
+		max-width: 100% !important;
+	}
+}
+@media (max-width: 660px) {
+	.zigzag {
+		&.iconbkg li {
+			@include short-padding;
+			.text-wrapper:before {
+				margin: 0;
+				position: absolute;
+				z-index: -1;
+			}
+			.title {
+				text-align: center;
+			}
+			p {
+				margin: 0;
+			}
+		}
+		&.iconbkg li:nth-child(odd) .text-wrapper:before {
+			left: -1.5em;
+		}
+		&.iconbkg li:nth-child(even) .text-wrapper:before {
+			right: -1.5em;
+		}
+	}
 }
 @media (max-width: 480px) {
 	.title, .subtitle {
 		font-size: 2em;
+	}
+	.zigzag.iconbkg li .title {
+		margin-bottom: .25em;
 	}
 }
 
@@ -173,8 +205,8 @@
 				margin: 0;
 				padding-top: 0;
 				@include short-padding;
-				max-width: 100%;
-				.title {
+				max-width: 100% !important;
+				.title, .subtitle {
 					display: inline-block;
 					position: relative;
 					z-index: 1;
@@ -342,15 +374,43 @@
 			text-align: center !important;
 		}
 	}
-	#metodologias section.info {
-		margin: 0;
-		padding: 4em 2em 6em;
-	}
 }
 
 //Quienes somos
-@media (max-width: 720px) {
+@media (max-width: 768px) {
 	#equipo-fundador li {
 		@include short-padding;
+	}
+}
+
+//Servicios personalizados
+@media (max-width: 660px) {
+	#lista-servicios {
+		position: relative;
+		.intro {
+			padding-top: 0;
+			padding-bottom: 6em;
+			&:before {
+				margin-bottom: 5em;
+			}
+		}
+		&:before {
+			@include layer;
+			height: 9em;
+			top: -1em;
+			background: $grey0;
+		}
+	}
+}
+
+//Cursos y talleres
+@media (max-width: 660px) {
+	#talleres .card {
+		.subtitle {
+			margin-bottom: -1em;
+		}
+		&:first-child ul {
+			margin-top: -1em;
+		}
 	}
 }
