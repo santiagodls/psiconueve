@@ -42,7 +42,7 @@ var quoteInterval;
 function textRotator() {
 	textInterval = setInterval(function(){
 		rotator("dinamic-end b");
-	}, 3500);
+	}, 2500);
 }
 function quoteRotator() {
 	quoteInterval = setInterval(function(){

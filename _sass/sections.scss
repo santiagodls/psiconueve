@@ -341,6 +341,9 @@
 			label {
 				line-height: 2em;
 				font-weight: bold;
+				&:after {
+					content: "*";
+				}
 			}
 		}
 		.group-wrapper {
