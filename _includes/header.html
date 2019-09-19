@@ -7,15 +7,15 @@
 <div id="menu-fs">
 	<nav id="menu-options">
 		<ul>
-			{% assign nav_menu = site.html_pages | sort:"nav" %}
-			{% for i in nav_menu %}
-				{% if i.nav %}
-					<li {% if i.url == page.url %}class="active"{%  endif %}>
-						<a href="{{ site.baseurl }}{{ i.url }}">{{ i.title }}</a>
-					</li>
-				{% endif %}
-			{% endfor %}
-			<li><a href="https://psiconueve.blogspot.com" target="_blank">Visita nuestro blog</a></li>
+			<li> <a href="/">Inicio</a> </li> 
+			<li> <a href="/nuestra_filosofia/">Nuestra Filosofía</a> </li> 
+			<li> <a href="https://psiconueve.blogspot.com" target="_blank">Blog</a></li> 
+			<li> <a href="/areas_intervencion/">Áreas de Intervención</a> </li> 
+			<li> <a href="/metodologia/">Metodología</a> </li> 
+			<li> <a href="/quienes_somos/">Quiénes Somos</a> </li> 
+			<li> <a href="/servicios/">Servicios Personalizados</a> </li> 
+			<li> <a href="/cursos_talleres/">Cursos y Talleres</a> </li> 
+			<li> <a href="/contacto/">Contacto</a> </li> 
 		</ul>
 	</nav>
 	<ul id="quotes">
