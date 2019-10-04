@@ -109,6 +109,36 @@
 			}
 		}
 	}
+	&.pareja {
+		background: $grey0;
+		.text-wrapper {
+			z-index: 1;
+			&:before {
+				@include iconbkg(23em, -1em, -5%, auto, "pareja");
+			}
+		}
+		.title {
+			text-align: left;
+			margin: 0 0 .25em -.5em;
+		}
+		li{
+			position: relative;
+			box-sizing: border-box;
+			margin-left: 2em;
+			&:before {
+				@include iconbkg(7em, 50%, auto, -4.5em, "lista");
+				transform: translateY(-50%);
+				background-size: 100% 400%;
+			}
+			$value: 0;
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}):before {
+					background-position: 0 $value*1%;
+				}
+				$value: $value+33.3;
+			}
+		}
+	}
 	&.info {
 		max-width:50em;
 		padding: 5em 5.5em 5.5em;
